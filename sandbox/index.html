@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+
+        function runTest() {
+            
+            var x = document.getElementById('firstSelect').selectedIndex + 1;
+            alert(x);
+
+            var y = "";
+
+            if (x == 1 || x == 3) {
+                for (z = 0; z < 20; ++z) {
+                    y = y + "<option value=\"" + (z + 1) + "\">" + (z + 1) + "</option>";
+                }
+            }
+            else {
+                for (z = 0; z < 50; ++z) {
+                    y = y + "<option value=\"" + (z + 1) + "\">" + (z + 1) + "</option>";
+                }
+            }
+
+            document.getElementById('secondSelect').innerHTML = y;
+
+        }
+
+    </script>
+</head>
+<body onload="runTest()">
+
+
+        <form method='post' action='session_2.php'>
+            <input type='text' id='uname' name='u' />
+            <input type='text' name='p' />
+            <input type='submit' value='log-in' />
+        </form>
+
+
+        <select onchange="runTest()" id="firstSelect">
+            <option >1</option>
+            <option >2</option>
+            <option >3</option>
+        </select>
+
+        <select id="secondSelect">
+
+        </select>
+
+</body>
+</html>

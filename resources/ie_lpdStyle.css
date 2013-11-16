@@ -1,0 +1,134 @@
+﻿body {
+background: #fff;
+}
+
+#imagesTable img {
+box-shadow:5px 5px 5px #393929
+}
+
+a {
+cursor:crosshair;
+}
+
+@font-face
+{
+font-family: myFont;
+src: url('fonts/Marcsc___.ttf');
+}
+
+#nameSpan {
+	position:absolute;
+	left:25px;
+	top:15px;
+	text-align:center;
+	width:800px;
+	font-family: myFont;
+	font-size:32px;
+}
+
+#divider {
+	position:absolute;
+	left:75px;
+	top:55px;
+	width:700px;
+	background-color:#8E8E88;
+	height:2px;
+	z-index:20;
+}
+
+#navTable {
+	position:absolute;
+	width:800px;
+	height:25px;
+	top:55px;
+	left: 25px;
+}
+
+	#navTable td {
+	text-align:center;
+	width:160px;
+	
+	}
+
+#AboutDP {
+
+}
+
+#StyleDP {
+	height:500px;
+}
+
+#ContactDP {
+	height:500px;
+}
+
+.navClass {
+	border: black 2px solid;
+	border-radius:10px;
+	position:absolute;
+	left:75px;
+	top:90px;
+	width:680px;
+	height:230px;
+	padding:10px;
+	opacity:1;
+	transition: opacity 1s;
+	-moz-transition: opacity 1s; /* Firefox 4 */
+	-webkit-transition: opacity 1s; /* Safari and Chrome */
+	-o-transition: opacity 1s; /* Opera */
+}
+
+.formInput {
+	position:absolute;
+	left:100px;
+}
+
+
+/*disp_db styles open*/
+#outputTable {
+
+	width:1000px;
+}
+
+  .shadeRow
+  {
+    background-color: #996;
+  }
+  #db_nav
+  {
+    position:absolute;
+  }
+  #db_nav td
+  {
+    text-align:center;
+  }
+  #Update_db_form
+  {
+    position:absolute;
+    border: 1px solid black;
+    height:250px;
+    opacity: 0;
+  }
+  #Delete_db_form
+  {
+    position:absolute;
+    border: 1px solid black;
+    height:250px;
+    opacity: 0;
+  }
+  #Sort_db_form
+  {
+    position:absolute;
+    border: 1px solid black;
+    height:250px;
+    opacity: 0;
+  }
+  #Create_db_form
+  {
+    position:absolute;
+    border: 1px solid black;
+    height:400px;
+    opacity: 0;
+  }
+
+/*disp_db styles close*/

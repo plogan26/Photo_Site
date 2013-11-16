@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Staff login</title>
+    <link type="text/css" rel="stylesheet" href="resources/lpdStyle.css" />
+        <script>
+            function setFocus() {
+                document.getElementById('uname').focus();
+            }
+     </script>
+
+</head>
+<body onload="setFocus()">
+
+    <div style="position:absolute;left:25px;top:8px" >Staff Login (for employees of Logan P&D only):</div>  
+    <div id="staffLog"> 
+        <form method="post" action="resources/mysql/test_auth_table.php">
+            <input type="text" id='uname' name="u" />
+            <input type="password" name="p" />
+            <input type="submit" value="log-in" />
+        </form>
+    </div>
+</body>
+</html>

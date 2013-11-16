@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Logan Photography</title>
+    <link type="text/css" rel="stylesheet" href="resources/lpdStyle.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    
+    <script> 
+        function findIt() {
+            alert(document.getElementById('nameSpan').offsetHeight);
+        }
+
+        function setStage() {
+            document.getElementById('AboutDP').style.opacity = 0;
+            document.getElementById('StyleDP').style.opacity = 0;
+            document.getElementById('EventsDP').style.opacity = 0;
+            document.getElementById('ProjectsDP').style.opacity = 0;
+            document.getElementById('ContactDP').style.opacity = 0;
+
+            document.getElementById('AboutDP').style.zIndex = 0;
+            document.getElementById('StyleDP').style.zIndex = 0;
+            document.getElementById('EventsDP').style.zIndex = 0;
+            document.getElementById('ProjectsDP').style.zIndex = 0;
+            document.getElementById('ContactDP').style.zIndex = 0;
+        }
+
+
+        function newDisplay(z) {
+            var x = false;
+            x = document.getElementById(z + 'DP').style.opacity;
+
+            if (x == 1) {
+                document.getElementById(z + 'DP').style.opacity = 0
+            }
+            else {
+                setStage();
+                document.getElementById(z + 'DP').style.opacity = 1
+                document.getElementById(z + 'DP').style.zIndex = 10;
+            }
+        }
+
+
+        $(function () {
+            var dateFormat = $(".selector").datepicker("option", "dateFormat");
+            $(".selector").datepicker("option", "dateFormat", "yy-mm-dd");
+            $("#datepicker").datepicker();
+        });
+
+            $(function () {
+                var availableTags = [
+                    "Alabama",
+                    "Alaska",
+                    "American Samoa",
+                    "Arizona",
+                    "Arkansas",
+                    "California",
+                    "Colorado",
+                    "Connecticut",
+                    "Delaware",
+                    "District of Columbia",
+                    "Florida",
+                    "Georgia",
+                    "Guam",
+                    "Hawaii",
+                    "Idaho",
+                    "Illinois",
+                    "Indiana",
+                    "Iowa",
+                    "Kansas",
+                    "Kentucky",
+                    "Louisiana",
+                    "Maine",
+                    "Maryland",
+                    "Massachusetts",
+                    "Michigan",
+                    "Minnesota",
+                    "Mississippi",
+                    "Missouri",
+                    "Montana",
+                    "Nebraska",
+                    "Nevada",
+                    "New Hampshire",
+                    "New Jersey",
+                    "New Mexico",
+                    "New York",
+                    "North Carolina",
+                    "North Dakota",
+                    "Northern Marianas Islands ",
+                    "Ohio",
+                    "Oklahoma",
+                    "Oregon",
+                    "Pennsylvania",
+                    "Puerto Rico",
+                    "Rhode Island",
+                    "South Carolina",
+                    "South Dakota",
+                    "Tennessee",
+                    "Texas",
+                    "Utah",
+                    "Vermont",
+                    "Virginia ",
+                    "Virgin Islands ",
+                    "Washington",
+                    "West Virginia",
+                    "Wisconsin",
+                    "Wyoming "
+
+                ];
+                $("#state").autocomplete({
+                    source: availableTags
+                });
+            });
+
+            function determine() {
+                var x = navigator.appName;
+                if (x == "Microsoft Internet Explorer") {
+                    document.write("You're using Internet Explorer. Redirecting to a site optimized for your browser.");
+                    window.location = "ie_pages/ie_index.html";
+                }
+                else {
+                    document.getElementById('mainLayout').style.visibility = 'visible';
+                }
+            }
+
+
+            function dispLarg(x) {
+                document.getElementById('largIm').src = "resources/images/wed/" + x + ".jpg";
+            }
+
+            function functionDisabled() {
+                alert("Function is currently disabled");
+            }
+
+    </script>
+
+
+</head>
+<body onload="setStage(); determine()">
+    <div id="mainLayout" style="width:800px; visibility:hidden;">
+        <span id="nameSpan">Logan Photography & Design</span>
+        <span id="divider"></span>
+      
+            <table id="navTable">
+                <tr>
+                    <td><a href="#" onclick="newDisplay(this.innerHTML)">About</a></td>
+                    <td><a href="#" onclick="newDisplay(this.innerHTML)">Style</a></td>
+                    <td><a href="#" onclick="newDisplay(this.innerHTML)">Contact</a></td>
+                </tr>
+            </table>
+
+    </div>
+
+
+    <div id="AboutDP" class="navClass" onclick="theTime()" >
+        About us...<br />
+        <br />
+        Life is a collection of moments. At Logan Photography & Design, it's our mission to capture these moments; preserving them for a lifetime.<br /><br />
+        Logan P&D started out as a hobby. Lead photographer Patrick Logan is a self-taught shooter with
+        nearly 15 years of experience ranging from large events, such as weddings and concerts, to small, intimate, events
+        such as family parties and portrature.<br /><br />
+        To enquire about booking, please view our <a href="#" onclick="newDisplay(this.innerHTML)">Contact</a> page.
+
+    </div>
+
+    <div id="StyleDP" class="navClass" >
+        Our style...<br /><br />
+
+        <table style="width:100%" id="imagesTable">
+
+            <tr>
+                <td align="center"><img src="resources/images/wed/01.jpg" id="01" onmouseover="dispLarg(this.id)" style="width:100px"/></td>
+                <td align="center"><img src="resources/images/wed/02.jpg" id="02" onmouseover="dispLarg(this.id)" style="width:100px"/></td>
+                <td align="center"><img src="resources/images/wed/03.jpg" id="03" onmouseover="dispLarg(this.id)" style="width:100px"/></td>
+                <td align="center"><img src="resources/images/wed/04.jpg" id="04" onmouseover="dispLarg(this.id)" style="width:100px"/></td>
+            </tr>
+            <tr>
+                <td align="center"><img src="resources/images/wed/05.jpg" id="05" onmouseover="dispLarg(this.id)" style="width:100px"/></td>
+                <td align="center"><img src="resources/images/wed/06.jpg" id="06" onmouseover="dispLarg(this.id)" style="height:100px"/></td>
+                <td align="center"><img src="resources/images/wed/07.jpg" id="07" onmouseover="dispLarg(this.id)" style="height:100px"/></td>
+                <td align="center"><img src="resources/images/wed/08.jpg" id="08" onmouseover="dispLarg(this.id)" style="height:100px"/></td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center" id="display"><img id="largIm" style="height:260px;"/></td>
+
+            </tr>
+
+        </table>
+
+
+    </div>
+
+    <div id="EventsDP" class="navClass" >
+        Previous events:
+    </div>
+
+    <div id="ProjectsDP" class="navClass" >
+        Art projects:
+    </div>
+
+    <div id="ContactDP" class="navClass" >
+        Contact us:<br /><br />
+        By phone: 555.555.5555<br />
+        By email: patrick@patrickrocks.com<br />
+        <br /><br />
+        To tentatively book an event please fill out the following form:
+
+    <form method="post" action="resources/mysql/contact.php">
+        
+        <table id="inputTable" style="border: solid black 0px; width:650px;border-radius:10px;">
+            <tr>
+                <td>First name</td>
+                <td><input type="text" name="fname" /></td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td><input type="text" name="lname" /></td>
+            </tr>
+            <tr>
+                <td>Event type</td>
+                <td>
+                <select name='etype'>
+                    <option value=''></option>
+                    <option value='Wedding'>Wedding</option>
+                    <option value='Birthday'>Birthday</option>
+                    <option value='Bar Mitzvah'>Bar Mitzvah</option>
+                    <option value='Christening'>Christening</option>
+                    <option value='Party'>Party</option>
+                    <option value='Concert'>Concert</option>
+                    <option value='Portraiture'>Portraiture</option>
+                    <option value='Other'>Other</option>
+                    
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Event date</td>
+                <td><input type="text" id="datepicker" name="edate" /></td>
+            </tr>
+            <tr>
+                <td>Location; City:</td>
+                <td><input type="text" name="city" /></td>
+            </tr>
+            <tr>
+                <td>Location; State: </td>
+                <td><input type="text" id="state" name="state"/></td>
+            </tr>
+            <tr>
+                <td>Primary phone:</td>
+                <td><input type="text" name="phone" /></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" /></td>
+            </tr>
+            <tr>
+                <td>Further details:</td>
+                <td><textarea rows="5" cols="50" name="furDetails" style="resize:none;"></textarea></td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td style="float:right"><input type="button" onclick="functionDisabled()" value="Submit" name="submit" /></td>
+            </tr>
+        </table>
+
+        <input type="text" name="time" style="visibility:hidden" />
+
+        
+
+    </form>
+
+
+    </div>
+
+    
+    <!-- Function is currently disabled-->
+    <!-- <div id="empsOnly" style="position:absolute;left:75px;top:615px;z-index:100"><a href="user_login.html">Employees</a></div> -->
+    
+</body>
+</html>
